@@ -53,42 +53,6 @@ card.addEventListener('mouseout', () => {
 //   }
 // });
 
-// Optional glowing trail (mouse sparkles)
-document.addEventListener('mousemove', function (e) {
-  const trail = document.createElement('div');
-  trail.classList.add('trail');
-  document.body.appendChild(trail);
-
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
-
-  trail.style.left = `${mouseX}px`;
-  trail.style.top = `${mouseY}px`;
-
-  setTimeout(() => {
-    trail.remove();  // Remove trail after animation
-  }, 300);
-});
-
-
-// Optional glowing trail (mouse sparkles)
-document.addEventListener('mousemove', function (e) {
-  const trail = document.createElement('div');
-  trail.classList.add('trail');
-  document.body.appendChild(trail);
-
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
-
-  trail.style.left = `${mouseX}px`;
-  trail.style.top = `${mouseY}px`;
-
-  setTimeout(() => {
-    trail.remove();  // Remove trail after animation
-  }, 300);
-});
-
-
 // Add an event listener to trigger animations when scrolling
 window.addEventListener("scroll", function () {
     const elements = document.querySelectorAll(".fade-in");
