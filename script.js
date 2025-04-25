@@ -8,7 +8,7 @@ document.addEventListener('mousemove', function (e) {
     const mouseY = e.clientY;
   
     trail.style.left = `${mouseX}px`;
-    trail.style.top = `${mouseY}px`;
+    trail.style.top = `${mouseY + window.scrollY}px`;
   
     setTimeout(() => {
       trail.remove();  // Remove trail after animation
