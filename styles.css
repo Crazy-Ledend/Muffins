@@ -135,9 +135,10 @@
   }
   
   .invite-btn:hover {
-    background: #9b00ff;
+    background: #8426ff;
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 6px 0 rgba(255, 0, 255, 0.8);
+    color: white;
+    box-shadow: 0 6px 2px rgba(191, 8, 255, 0.8);
   }
   
   .invite-btn:active {
@@ -349,6 +350,7 @@
   
 .star-rating {
   display: flex;
+  flex-direction: row;
   gap: 5px;
   font-size: 2rem;
   justify-content: center;
@@ -357,8 +359,20 @@
   cursor: pointer;
 }
 
-.star-rating:hover {
-  transform: scale(1.2)
+.star {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.star:hover,
+.star ~ .star:hover{
+  transform: scale(1.4);
+  color: gold;
+  filter: drop-shadow(0 0 4px #ffcf00);
+}
+.star.active {
+  transform: scale(1.4);
+  color: gold;
+  filter: drop-shadow(0 0 4px #ffcf00);
 }
 
 .review-card {
@@ -380,11 +394,6 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-}
-.star-rating .star.active {
-  color: gold;
-  filter: drop-shadow(0 0 3px #ffcf00);
-  transition: color 0.3s;
 }
 
 /* Match input styling with your card theme */
