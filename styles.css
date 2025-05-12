@@ -13,6 +13,7 @@
   body {
     font-family: 'Quicksand', sans-serif;
     background: radial-gradient(ellipse at bottom, #0f0c29, #302b63, #24243e);
+    background-attachment: fixed;
     color: #fff;
     overflow-x: hidden;
     min-height: 100vh;
@@ -33,19 +34,42 @@
   }
   
   /* Glowing background circles */
-  .glow-bg::before,
-  .glow-bg::after {
-    content: '';
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent);
-    filter: blur(100px);
-    animation: moveGlow 20s ease-in-out infinite alternate; /* Reduced time for smoother effect */
-    z-index: 0;
-  }
-  
+.glow-bg::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 10%;
+  left: 15%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent 70%);
+  filter: blur(150px);
+}
+
+.glow-bg::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  bottom: 10%;
+  right: 15%;
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.15), transparent 70%);
+  filter: blur(150px);
+}
+
+.glow-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 255, 255, 0.2), transparent);
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures it fills the area */
+  background-position: center;
+  z-index: -1; /* Keep it behind content */
+  pointer-events: none; /* Optional: ignore clicks */
+}
+
   .glow-bg::before {
     top: -200px;
     left: -200px;
@@ -159,7 +183,7 @@
   }
   
   /* About + Timeline */
-  .about, .timeline {
+  .about, .timeline, .review-form {
     margin-top: 80px;
     max-width: 700px;
     margin-left: auto;
@@ -312,7 +336,6 @@
   img[loading="lazy"] {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    background-repeat: no-repeat;
   }
   
   img[loading="lazy"]:not([src=""]) {
