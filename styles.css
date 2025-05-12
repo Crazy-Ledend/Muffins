@@ -389,11 +389,24 @@
 
 .card-button {
   padding: 0.75rem;
-  background: #7f5af0;
+  background: linear-gradient(to right, #00f5ff, #ff00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flicker 2s infinite alternate;
+  font-size: 1.2rem;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.card-button:hover {
+  background: linear-gradient(to right, #ff00e0, #00f5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flicker 2s infinite alternate;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
 }
 
 /* Match input styling with your card theme */
