@@ -183,6 +183,14 @@
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
   }
   
+  .h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #00f5ff, #ff00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flicker 2s infinite alternate;
+  }
+
   /* About + Timeline */
   .about, .timeline, .review-form {
     margin-top: 80px;
@@ -195,6 +203,11 @@
   .about h2, .timeline h2 {
     font-size: 2rem;
     color: #00f5ff;
+    margin-bottom: 20px;
+  }
+  .timeline h3 {
+    font-size: 1.2rem;
+    color: #ccc;
     margin-bottom: 20px;
   }
   
@@ -434,3 +447,22 @@
   backdrop-filter: blur(6px);
   color: #fff;
 }
+
+  .tutorial-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    width: 250px; /* Reduced width for cards */
+    margin: 10px; /* Reduced margin */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    will-change: transform, opacity; /* Helps the browser optimize for animation */
+  }
+  
+  .tutorial-card:hover {
+    transform: translateY(-8px) rotateZ(0.5deg);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  }
