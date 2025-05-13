@@ -295,6 +295,27 @@
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
   }
   
+  .icon-btn {
+  padding: 0.75rem;
+  background: linear-gradient(to right, #00f5ff, #1505c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flicker 2s infinite alternate;
+  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.icon-btn:hover {
+  background: linear-gradient(to right, #1505c7, #00f5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flicker 2s infinite alternate;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
   /* Privacy policy */
   .privacy-policy {
     margin-top: 80px;
